@@ -76,7 +76,7 @@ pip3 install numpy
 echo ""
 echo ""
 echo "Select your audio and mic configuration: "
-select_option audio AIY-HAT CUSTOM-VOICE-HAT USB-MIC-ON-BOARD-JACK USB-MIC-HDMI USB-SOUND-CARD-or-DAC RESPEAKER-HAT
+select_option audio AIY-HAT CUSTOM-VOICE-HAT USB-MIC-ON-BOARD-JACK USB-MIC-HDMI USB-SOUND-CARD-or-DAC RESPEAKER-HAT AUDIO-ALREADY-CONFIGURED
 echo ""
 echo "You have chosen to use $audio audio configuration"
 echo ""
@@ -115,7 +115,10 @@ case $audio in
         git clone https://github.com/shivasiddharth/seeed-voicecard
         cd ./seeed-voicecard/
         sudo ./install.sh
-    	 ;;
+    	      ;;
+    AUDIO-ALREADY-CONFIGURED)
+        :
+	 ;;
 esac
 echo ""
 echo "Audio configuration for $audio done."
